@@ -1,3 +1,3 @@
-irishmart.github.io/
+inmailparag.github.io/
 │
 ├── index.html
