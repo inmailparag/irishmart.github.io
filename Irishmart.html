@@ -1,0 +1,3295 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IrishMart - Ireland's Premier B2B Marketplace. Connect with Irish suppliers, manufacturers, and buyers.">
+    <meta name="keywords" content="Ireland B2B marketplace, Irish suppliers, Irish manufacturers, buy sell Ireland">
+    <title>IrishMart - Ireland's Premier B2B Marketplace 🍀</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍀</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           CSS RESET & VARIABLES
+        ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #169b62;
+            --primary-dark: #0d7a4e;
+            --primary-light: #e8f8f0;
+            --secondary: #ff6b35;
+            --accent: #ffd700;
+            --white-color: #ff6600;
+            --dark: #1a1a2e;
+            --gray: #6b7280;
+            --light-gray: #f8fafc;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.15);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+        ============================================ */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(22, 155, 98, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 12px 28px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, #ff6b35, #e85520);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        /* ============================================
+           ANNOUNCEMENT BAR
+        ============================================ */
+        .announcement-bar {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .announcement-bar a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .announcement-bar span {
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            border-bottom: 1px solid var(--border);
+            padding: 8px 0;
+        }
+
+        .header-top .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-name span {
+            color: var(--secondary);
+        }
+
+        .logo-tagline {
+            font-size: 10px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .search-category {
+            padding: 10px 14px;
+            border: none;
+            border-right: 1px solid var(--border);
+            background: var(--light-gray);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--dark);
+            cursor: pointer;
+            min-width: 150px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .header-action-btn:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .header-action-btn i {
+            font-size: 18px;
+        }
+
+        .header-action-btn span {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: var(--dark);
+            padding: 0;
+        }
+
+        .nav-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-menu li a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 14px 16px;
+            display: block;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-menu li a.active {
+            color: var(--accent);
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+        }
+
+        .nav-right a {
+            color: white;
+            font-size: 12px;
+            text-decoration: none;
+            padding: 5px 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .nav-right a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            background: linear-gradient(135deg, #0d2137 0%, #1a3a2a 50%, #0d4a2e 100%);
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(22,155,98,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .hero-stat {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* Hero Right - Featured Categories */
+        .hero-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .hero-category-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+        }
+
+        .hero-category-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-category-card .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero-category-card .name {
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .hero-category-card .count {
+            color: var(--accent);
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+           TICKER / SCROLLING BAR
+        ============================================ */
+        .ticker-bar {
+            background: var(--primary-light);
+            border-top: 2px solid var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        .ticker-content {
+            display: flex;
+            gap: 60px;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            color: var(--primary-dark);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ticker-item::before {
+            content: '🍀';
+            font-size: 14px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ============================================
+           CATEGORIES SECTION
+        ============================================ */
+        .categories-section {
+            padding: 70px 0;
+            background: var(--light-gray);
+        }
+
+        .categories-section .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--dark);
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-card .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.6rem;
+        }
+
+        .category-card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .category-card p {
+            font-size: 11px;
+            color: var(--gray);
+        }
+
+        /* ============================================
+           FEATURED PRODUCTS
+        ============================================ */
+        .featured-section {
+            padding: 70px 0;
+            background: white;
+        }
+
+        .featured-section .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .product-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .product-badge.hot {
+            background: var(--secondary);
+        }
+
+        .product-badge.new {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .product-info {
+            padding: 16px;
+        }
+
+        .product-category-tag {
+            font-size: 11px;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .product-supplier {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .supplier-avatar {
+            width: 22px;
+            height: 22px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .supplier-name {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .product-price span {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 400;
+            margin-left: 4px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+            padding: 0 16px 16px;
+        }
+
+        .product-actions button {
+            flex: 1;
+            padding: 9px;
+            border: none;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-inquiry {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-inquiry:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-wishlist {
+            background: var(--light-gray);
+            color: var(--gray);
+            border: 1px solid var(--border) !important;
+        }
+
+        .btn-wishlist:hover {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        /* ============================================
+           SUPPLIER SPOTLIGHT
+        ============================================ */
+        .suppliers-section {
+            padding: 70px 0;
+            background: var(--light-gray);
+        }
+
+        .suppliers-section .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .suppliers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .supplier-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .supplier-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .supplier-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .supplier-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .supplier-info h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .supplier-location {
+            font-size: 12px;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #dcfce7;
+            color: #16a34a;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .supplier-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .supplier-stat {
+            text-align: center;
+            padding: 10px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .supplier-stat-num {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .supplier-stat-label {
+            font-size: 10px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .supplier-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .supplier-tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+        }
+
+        .stars {
+            color: var(--accent);
+        }
+
+        /* ============================================
+           WHY IRISHMART
+        ============================================ */
+        .why-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .why-section .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            background: var(--primary-light);
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--primary-light), white);
+            border: 2px solid var(--primary);
+        }
+
+        .why-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .why-card p {
+            font-size: 13.5px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           PRICING SECTION
+        ============================================ */
+        .pricing-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0d2137 0%, #1a3a2a 100%);
+        }
+
+        .pricing-section .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-section .section-title {
+            color: white;
+        }
+
+        .pricing-section .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius);
+            padding: 35px 28px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            background: white;
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .pricing-card:hover:not(.popular) {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-5px);
+        }
+
+        .pricing-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card.popular .pricing-name {
+            color: var(--gray);
+        }
+
+        .pricing-price {
+            margin-bottom: 30px;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .pricing-card.popular .price-amount {
+            color: var(--primary);
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            font-weight: 700;
+            vertical-align: top;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .price-period {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 5px;
+        }
+
+        .pricing-card.popular .price-period {
+            color: var(--gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .pricing-card.popular .pricing-features li {
+            color: var(--dark);
+            border-bottom-color: var(--border);
+        }
+
+        .pricing-features li i {
+            color: var(--primary);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .pricing-features li.disabled {
+            opacity: 0.4;
+        }
+
+        .pricing-features li.disabled i {
+            color: var(--gray);
+        }
+
+        /* ============================================
+           TESTIMONIALS
+        ============================================ */
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .testimonials-section .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 15px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            border: 2px solid var(--primary);
+        }
+
+        .author-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .author-company {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* ============================================
+           STATS COUNTER SECTION
+        ============================================ */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            display: block;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.85;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        /* ============================================
+           HOW IT WORKS
+        ============================================ */
+        .how-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .how-section .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .how-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            z-index: 0;
+        }
+
+        .how-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 0 8px var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .how-step:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 8px rgba(22,155,98,0.2);
+        }
+
+        .how-step h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .how-step p {
+            font-size: 13.5px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           RECENT INQUIRIES / LEADS
+        ============================================ */
+        .inquiries-section {
+            padding: 70px 0;
+            background: var(--light-gray);
+        }
+
+        .inquiries-section .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .inquiry-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .inquiry-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .inquiry-info {
+            flex: 1;
+        }
+
+        .inquiry-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .inquiry-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .inquiry-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .inquiry-qty {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        /* ============================================
+           NEWSLETTER SECTION
+        ============================================ */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--secondary), #e85520);
+            padding: 60px 0;
+        }
+
+        .newsletter-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .newsletter-text h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-text p {
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ============================================
+           PARTNERS / LOGOS
+        ============================================ */
+        .partners-section {
+            padding: 50px 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .partners-section .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .partners-section .header p {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            background: var(--light-gray);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 24px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .partner-logo:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* ============================================
+           APP DOWNLOAD SECTION
+        ============================================ */
+        .app-section {
+            padding: 70px 0;
+            background: var(--light-gray);
+        }
+
+        .app-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .app-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .app-text p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .app-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--dark);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .app-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .app-btn i {
+            font-size: 1.8rem;
+        }
+
+        .app-btn-text small {
+            display: block;
+            font-size: 10px;
+            opacity: 0.8;
+        }
+
+        .app-btn-text strong {
+            font-size: 15px;
+        }
+
+        .app-mockup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 30px 60px rgba(22,155,98,0.3);
+            position: relative;
+            border: 8px solid var(--dark);
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 6px;
+            background: var(--dark);
+            border-radius: 3px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 18px;
+        }
+
+        .footer-brand .logo-name {
+            color: white;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+        }
+
+        .footer-col h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links li a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 13.5px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-links li a i {
+            font-size: 10px;
+            color: var(--primary);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-contact-item i {
+            color: var(--primary);
+            margin-top: 2px;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 0;
+        }
+
+        .footer-bottom .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-bottom p span {
+            color: var(--primary);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ============================================
+           MODAL
+        ============================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 480px;
+            width: 100%;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .modal h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .modal p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .modal-tabs {
+            display: flex;
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 4px;
+            margin-bottom: 24px;
+        }
+
+        .modal-tab {
+            flex: 1;
+            padding: 9px;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .modal-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+            color: var(--dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(22,155,98,0.4);
+        }
+
+        .social-login {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .social-login-btn {
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .social-login-btn:hover {
+            background: var(--light-gray);
+        }
+
+        /* ============================================
+           FLOATING WHATSAPP BUTTON
+        ============================================ */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.5);
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 8px 35px rgba(37,211,102,0.8); }
+        }
+
+        /* ============================================
+           SCROLL TO TOP
+        ============================================ */
+        .scroll-top {
+            position: fixed;
+            bottom: 95px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transition);
+            opacity: 0;
+            pointer-events: none;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+           COOKIE BANNER
+        ============================================ */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            z-index: 9998;
+            border-top: 3px solid var(--primary);
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-text {
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.5;
+        }
+
+        .cookie-text a {
+            color: var(--primary);
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .cookie-accept {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 9px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cookie-accept:hover {
+            background: var(--primary-dark);
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 9px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cookie-decline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ============================================
+           LOADING ANIMATION
+        ============================================ */
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-logo {
+            font-size: 4rem;
+            animation: bounce 1s infinite;
+            margin-bottom: 20px;
+        }
+
+        .loader-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            border-radius: 2px;
+            animation: loading 1.5s ease forwards;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes loading {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        /* ============================================
+           NOTIFICATION TOAST
+        ============================================ */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: white;
+            border-radius: 10px;
+            padding: 14px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 300px;
+            border-left: 4px solid var(--primary);
+            transform: translateX(120%);
+            transition: transform 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            border-left-color: #ef4444;
+        }
+
+        .toast.warning {
+            border-left-color: var(--accent);
+        }
+
+        .toast-icon {
+            font-size: 1.3rem;
+        }
+
+        .toast-message {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* ============================================
+           LIVE CHAT WIDGET
+        ============================================ */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+
+        .chat-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-panel {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            width: 320px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: none;
+        }
+
+        .chat-panel.open {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .chat-header-info h4 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .chat-header-info p {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .chat-status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        .chat-messages {
+            padding: 16px;
+            height: 200px;
+            overflow-y: auto;
+            background: var(--light-gray);
+        }
+
+        .chat-msg {
+            background: white;
+            border-radius: 12px 12px 12px 4px;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: var(--dark);
+            margin-bottom: 10px;
+            max-width: 85%;
+            box-shadow: var(--shadow);
+        }
+
+        .chat-msg-time {
+            font-size: 10px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        .chat-input-area {
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 13px;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .chat-send {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .chat-send:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 1024px) {
+            .categories-grid { grid-template-columns: repeat(4, 1fr); }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-right { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .header-top .container { flex-wrap: wrap; }
+            .search-bar { order: 3; width: 100%; max-width: 100%; }
+            .header-actions { gap: 5px; }
+            .nav-menu { display: none; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .categories-grid { grid-template-columns: repeat(3, 1fr); }
+            .products-grid { grid-template-columns: 1fr; }
+            .suppliers-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-steps { grid-template-columns: repeat(2, 1fr); }
+            .how-steps::before { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.popular { transform: scale(1); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .newsletter-content { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+            .app-content { grid-template-columns: 1fr; }
+            .app-mockup { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .section-title { font-size: 1.7rem; }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; }
+            .why-grid { grid-template-columns: 1fr; }
+            .how-steps { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         PAGE LOADER
+    ============================================ -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-logo">🍀</div>
+        <div class="loader-text">IrishMart</div>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         TOAST CONTAINER
+    ============================================ -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================
+         ANNOUNCEMENT BAR
+    ============================================ -->
+    <div class="announcement-bar">
+        🎉 Special Launch Offer! Get <a href="#">3 Months FREE</a> on Gold Plan
+        <span>|</span>
+        🍀 Over 5,000 Irish Businesses Already Connected
+        <span>|</span>
+        📞 Free consultation: <a href="tel:+35315551234">+353 1 555 1234</a>
+    </div>
+
+    <!-- ============================================
+         HEADER
+    ============================================ -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon">🍀</div>
+                    <div class="logo-text">
+                        <span class="logo-name">Irish<span>Mart</span></span>
+                        <span class="logo-tagline">Ireland's B2B Marketplace</span>
+                    </div>
+                </a>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <select class="search-category">
+                        <option>All Categories</option>
+                        <option>Agriculture & Food</option>
+                        <option>Construction</option>
+                        <option>Technology</option>
+                        <option>Healthcare</option>
+                        <option>Manufacturing</option>
+                        <option>Retail</option>
+                        <option>Hospitality</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="Search products, suppliers, companies..." id="searchInput">
+                    <button class="search-btn" onclick="handleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <a href="#" class="header-action-btn" onclick="openModal('login')">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="#" class="header-action-btn">
+                        <i class="fas fa-bell"></i>
+                        <span>Alerts</span>
+                    </a>
+                    <a href="#" class="header-action-btn">
+                        <i class="fas fa-heart"></i>
+                        <span>Saved</span>
+                    </a>
+                    <a href="#" class="btn-orange" onclick="openModal('register')">
+                        List Your Business
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">🏠 Home</a></li>
+                    <li><a href="#">🌾 Agriculture</a></li>
+                    <li><a href="#">🏗️ Construction</a></li>
+                    <li><a href="#">💻 Technology</a></li>
+                    <li><a href="#">🏭 Manufacturing</a></li>
+                    <li><a href="#">🍺 Food & Drink</a></li>
+                    <li><a href="#">🏥 Healthcare</a></li>
+                    <li><a href="#">🚢 Import/Export</a></li>
+                    <li><a href="#">📋 All Categories</a></li>
+                </ul>
+                <div class="nav-right">
+                    <a href="#">Trade Leads</a>
+                    <a href="#">Verified Buyers</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         TICKER BAR
+    ============================================ -->
+    <div class="ticker-bar">
+        <div class="ticker-content" id="tickerContent">
+            <span class="ticker-item">Organic Irish Beef - Cork Supplier</span>
+            <span class="ticker-item">Construction Materials Wanted - Dublin</span>
+            <span class="ticker-item">Software Development Services - Galway</span>
+            <span class="ticker-item">Dairy Products Export - Kerry</span>
+            <span class="ticker-item">Sustainable Packaging Solutions</span>
+            <span class="ticker-item">Pharma Equipment Required</span>
+            <span class="ticker-item">Irish Whiskey Distributor Needed</span>
+            <span class="ticker-item">IT Infrastructure Services - Limerick</span>
+            <span class="ticker-item">Renewable Energy Products</span>
+            <span class="ticker-item">Seafood Export - Donegal</span>
+            <span class="ticker-item">Office Furniture Wholesale</span>
+            <span class="ticker-item">Medical Devices Manufacturer</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item">Organic Irish Beef - Cork Supplier</span>
+            <span class="ticker-item">Construction Materials Wanted - Dublin</span>
+            <span class="ticker-item">Software Development Services - Galway</span>
+            <span class="ticker-item">Dairy Products Export - Kerry</span>
+            <span class="ticker-item">Sustainable Packaging Solutions</span>
+            <span class="ticker-item">Pharma Equipment Required</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="badge">🇮🇪 #1 Irish B2B Marketplace</div>
+                <h1>Connect with <span>Irish Businesses</span> & Grow Together</h1>
+                <p>IrishMart is Ireland's premier online B2B marketplace connecting 5,000+ suppliers, manufacturers, and buyers across all industries. Find verified Irish businesses or showcase your products to the market.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary" onclick="openModal('register')">
+                        <i class="fas fa-rocket"></i> &nbsp;Start for Free
+                    </a>
+                    <a href="#" class="btn-secondary" style="background:transparent;color:white;border-color:rgba(255,255,255,0.5);">
+                        <i class="fas fa-search"></i> &nbsp;Find Suppliers
+                    </a>
+                    <a href="#" class="btn-orange">
+                        <i class="fas fa-play-circle"></i> &nbsp;Watch Demo
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" id="counter1">5,000+</span>
+                        <span class="hero-stat-label">Verified Suppliers</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" id="counter2">50,000+</span>
+                        <span class="hero-stat-label">Products Listed</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" id="counter3">270+</span>
+                        <span class="hero-stat-label">Industries Covered</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right fade-in">
+                <a href="#" class="hero-category-card">
+                    <span class="icon">🌾</span>
+                    <div class="name">Agriculture & Food</div>
+                    <div class="count">850+ Suppliers</div>
+                </a>
+                <a href="#" class="hero-category-card">
+                    <span class="icon">🏗️</span>
+                    <div class="name">Construction</div>
+                    <div class="count">620+ Suppliers</div>
+                </a>
+                <a href="#" class="hero-category-card">
+                    <span class="icon">💻</span>
+                    <div class="name">Technology & IT</div>
+                    <div class="count">940+ Suppliers</div>
+                </a>
+                <a href="#" class="hero-category-card">
+                    <span class="icon">🏭</span>
+                    <div class="name">Manufacturing</div>
+                    <div class="count">480+ Suppliers</div>
+                </a>
+                <a href="#" class="hero-category-card">
+                    <span class="icon">🍺</span>
+                    <div class="name">Food & Beverages</div>
+                    <div class="count">720+ Suppliers</div>
+                </a>
+                <a href="#" class="hero-category-card">
+                    <span class="icon">🚢</span>
+                    <div class="name">Import/Export</div>
+                    <div class="count">380+ Members</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CATEGORIES SECTION
+    ============================================ -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div class="badge">Browse by Industry</div>
+                <h2 class="section-title">Explore All Categories</h2>
+                <p class="section-subtitle">Find suppliers and buyers across every Irish industry sector</p>
+            </div>
+            <div class="categories-grid">
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#dcfce7;">🌾</div>
+                    <h3>Agriculture & Farming</h3>
+                    <p>850+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#fef3c7;">🏗️</div>
+                    <h3>Construction & Building</h3>
+                    <p>620+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#dbeafe;">💻</div>
+                    <h3>Technology & IT</h3>
+                    <p>940+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#f3e8ff;">🏥</div>
+                    <h3>Healthcare & Pharma</h3>
+                    <p>520+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#fff7ed;">🍺</div>
+                    <h3>Food & Beverages</h3>
+                    <p>720+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#fce7f3;">🏭</div>
+                    <h3>Manufacturing</h3>
+                    <p>480+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#ecfdf5;">🌊</div>
+                    <h3>Marine & Seafood</h3>
+                    <p>280+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#ffe4e6;">🛒</div>
+                    <h3>Retail & Wholesale</h3>
+                    <p>1,200+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#d1fae5;">☀️</div>
+                    <h3>Renewable Energy</h3>
+                    <p>180+ Products</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#e0f2fe;">🎓</div>
+                    <h3>Education & Training</h3>
+                    <p>320+ Services</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#fef9c3;">🚛</div>
+                    <h3>Logistics & Transport</h3>
+                    <p>410+ Services</p>
+                </a>
+                <a href="#" class="category-card fade-in">
+                    <div class="icon" style="background:#ede9fe;">🏨</div>
+                    <h3>Hospitality & Tourism</h3>
+                    <p>560+ Businesses</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED PRODUCTS
+    ============================================ -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div>
+                    <div class="badge">Trending Now</div>
+                    <h2 class="section-title">Featured Products & Services</h2>
+                    <p class="section-subtitle">Verified products from trusted Irish suppliers</p>
+                </div>
+                <a href="#" class="btn-secondary">View All Products →</a>
+            </div>
+            <div class="products-grid">
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
+                        🥩
+                        <span class="product-badge">VERIFIED</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Agriculture & Food</div>
+                        <div class="product-name">Premium Irish Grass-Fed Beef - Bulk Supply</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">🏭</div>
+                            <span class="supplier-name">Cork Valley Meats Ltd.</span>
+                        </div>
+                        <div class="product-price">€8.50/kg <span>Min. 500kg Order</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Cork Valley Meats!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+                        💻
+                        <span class="product-badge hot">HOT</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Technology</div>
+                        <div class="product-name">Custom Software Development Services</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">💼</div>
+                            <span class="supplier-name">Dublin Digital Solutions</span>
+                        </div>
+                        <div class="product-price">€75/hour <span>Project-based</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Dublin Digital!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">
+                        🏗️
+                        <span class="product-badge new">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Construction</div>
+                        <div class="product-name">Sustainable Concrete Mix - Eco Grade A</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">🏗️</div>
+                            <span class="supplier-name">Galway Build Supplies</span>
+                        </div>
+                        <div class="product-price">€145/tonne <span>Min. 10 tonnes</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Galway Build!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff);">
+                        💊
+                        <span class="product-badge">VERIFIED</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Healthcare & Pharma</div>
+                        <div class="product-name">Medical Grade PPE Equipment - Bulk Order</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">🏥</div>
+                            <span class="supplier-name">Shannon MedSupply</span>
+                        </div>
+                        <div class="product-price">€2.40/unit <span>Min. 1000 units</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Shannon MedSupply!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8);">
+                        🥛
+                        <span class="product-badge hot">EXPORT</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Dairy Products</div>
+                        <div class="product-name">Irish Cheddar Cheese - Export Quality</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">🧀</div>
+                            <span class="supplier-name">Kerry Gold Dairy Co.</span>
+                        </div>
+                        <div class="product-price">€12.50/kg <span>Min. 200kg</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Kerry Gold Dairy!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+                        ☀️
+                        <span class="product-badge new">GREEN</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Renewable Energy</div>
+                        <div class="product-name">Solar Panel Installation - Commercial Grade</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">⚡</div>
+                            <span class="supplier-name">Wicklow Green Energy</span>
+                        </div>
+                        <div class="product-price">€180/panel <span>Installation incl.</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Wicklow Green!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #e0f2fe, #bae6fd);">
+                        🐟
+                        <span class="product-badge">FRESH</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Marine & Seafood</div>
+                        <div class="product-name">Fresh Atlantic Salmon - Direct from Farm</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">🎣</div>
+                            <span class="supplier-name">Donegal Sea Farms</span>
+                        </div>
+                        <div class="product-price">€9.80/kg <span>Min. 100kg</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to Donegal Sea Farms!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fef9c3, #fef08a);">
+                        🚛
+                        <span class="product-badge">RELIABLE</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">Logistics</div>
+                        <div class="product-name">Nationwide Freight & Cold Chain Logistics</div>
+                        <div class="product-supplier">
+                            <div class="supplier-avatar">🚚</div>
+                            <span class="supplier-name">All-Ireland Transport</span>
+                        </div>
+                        <div class="product-price">€0.85/km <span>Per vehicle</span></div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-inquiry" onclick="showToast('Inquiry sent to All-Ireland Transport!', 'success')">Send Inquiry</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SUPPLIER SPOTLIGHT
+    ============================================ -->
+    <section class="suppliers-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div class="badge">🌟 Trusted Partners</div>
+                <h2 class="section-title">Verified Irish Suppliers</h2>
+                <p class="section-subtitle">Connect directly with Ireland's most trusted and verified business suppliers</p>
+            </div>
+            <div class="suppliers-grid">
+
+                <div class="supplier-card fade-in">
+                    <div class="supplier-header">
+                        <div class="supplier-logo" style="background:#dcfce7;">🌾</div>
+                        <div class="supplier-info">
+                            <h3>Cork Valley Meats Ltd.
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                            </h3>
+                            <div class="supplier-location"><i class="fas fa-map-marker-alt"></i> Cork, Munster</div>
+                        </div>
+                    </div>
+                    <div class="supplier-stats">
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">24</span>
+                            <span class="supplier-stat-label">Products</span>
+                        </div>
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">850+</span>
+                            <span class="supplier-stat-label">Clients</span>
+                        </div>
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">15yrs</span>
+                            <span class="supplier-stat-label">Experience</span>
+                        </div>
+                    </div>
+                    <div class="supplier-tags">
+                        <span class="supplier-tag">Beef</span>
+                        <span class="supplier-tag">Lamb</span>
+                        <span class="supplier-tag">Pork</span>
+                        <span class="supplier-tag">Export Ready</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span style="font-size:13px; font-weight:600;"> 4.9</span>
+                            <span style="font-size:12px; color:var(--gray);"> (128 reviews)</span>
+                        </div>
+                        <button class="btn-primary" style="padding:8px 16px; font-size:12px;" onclick="showToast('Contact request sent!', 'success')">Contact</button>
+                    </div>
+                </div>
+
+                <div class="supplier-card fade-in">
+                    <div class="supplier-header">
+                        <div class="supplier-logo" style="background:#dbeafe;">💻</div>
+                        <div class="supplier-info">
+                            <h3>Dublin Digital Solutions
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                            </h3>
+                            <div class="supplier-location"><i class="fas fa-map-marker-alt"></i> Dublin, Leinster</div>
+                        </div>
+                    </div>
+                    <div class="supplier-stats">
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">45</span>
+                            <span class="supplier-stat-label">Services</span>
+                        </div>
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">320+</span>
+                            <span class="supplier-stat-label">Projects</span>
+                        </div>
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">8yrs</span>
+                            <span class="supplier-stat-label">Experience</span>
+                        </div>
+                    </div>
+                    <div class="supplier-tags">
+                        <span class="supplier-tag">Web Dev</span>
+                        <span class="supplier-tag">Mobile Apps</span>
+                        <span class="supplier-tag">Cloud</span>
+                        <span class="supplier-tag">AI/ML</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span style="font-size:13px; font-weight:600;"> 4.8</span>
+                            <span style="font-size:12px; color:var(--gray);"> (96 reviews)</span>
+                        </div>
+                        <button class="btn-primary" style="padding:8px 16px; font-size:12px;" onclick="showToast('Contact request sent!', 'success')">Contact</button>
+                    </div>
+                </div>
+
+                <div class="supplier-card fade-in">
+                    <div class="supplier-header">
+                        <div class="supplier-logo" style="background:#fce7f3;">🥛</div>
+                        <div class="supplier-info">
+                            <h3>Kerry Gold Dairy Co.
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                            </h3>
+                            <div class="supplier-location"><i class="fas fa-map-marker-alt"></i> Tralee, Kerry</div>
+                        </div>
+                    </div>
+                    <div class="supplier-stats">
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">38</span>
+                            <span class="supplier-stat-label">Products</span>
+                        </div>
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">1,200+</span>
+                            <span class="supplier-stat-label">Clients</span>
+                        </div>
+                        <div class="supplier-stat">
+                            <span class="supplier-stat-num">25yrs</span>
+                            <span class="supplier-stat-label">Experience</span>
+                        </div>
+                    </div>
+                    <div class="supplier-tags">
+                        <span class="supplier-tag">Cheese</span>
+                        <span class="supplier-tag">Butter</span>
+                        <span class="supplier-tag">Milk</span>
+                        <span class="supplier-tag">EU Export</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span style="font-size:13px; font-weight:600;"> 4.9</span>
+                            <span style="font-size:12px; color:var(--gray);"> (215 reviews)</span>
+                        </div>
+                        <button class="btn-primary" style="padding:8px 16px; font-size:12px;" onclick="showToast('Contact request sent!', 'success')">Contact</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HOW IT WORKS
+    ============================================ -->
+    <section class="how-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div class="badge">Simple Process</div>
+                <h2 class="section-title">How IrishMart Works</h2>
+                <p class="section-subtitle">Join thousands of Irish businesses in just 4 simple steps</p>
+            </div>
+            <div class="how-steps">
+                <div class="how-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Register Your Business</h3>
+                    <p>Create a free account and set up your business profile with products, services, and company details in minutes.</p>
+                </div>
+                <div class="how-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Get Verified</h3>
+                    <p>Complete our GDPR-compliant verification process to receive your trust badge and boost buyer confidence.</p>
+                </div>
+                <div class="how-step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Connect & Communicate</h3>
+                    <p>Receive genuine business inquiries from verified buyers across Ireland and internationally.</p>
+                </div>
+                <div class="how-step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Close & Grow</h3>
+                    <p>Finalise deals, build long-term partnerships, and track your business growth with analytics tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         STATS SECTION
+    ============================================ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid fade-in">
+                <div class="stat-item">
+                    <span class="stat-number">5,000+</span>
+                    <div class="stat-label">🏢 Registered Businesses</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50,000+</span>
+                    <div class="stat-label">📦 Products & Services Listed</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">€12M+</span>
+                    <div class="stat-label">💰 Business Generated</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">32</span>
+                    <div class="stat-label">🌍 Export Countries Reached</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY IRISHMART
+    ============================================ -->
+    <section class="why-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div class="badge">Our Advantages</div>
+                <h2 class="section-title">Why Choose IrishMart?</h2>
+                <p class="section-subtitle">We are built specifically for Irish businesses with features that matter</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-icon">🔒</div>
+                    <h3>GDPR Compliant & Secure</h3>
+                    <p>Full compliance with EU GDPR regulations. Your data is protected with enterprise-grade security and encryption.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">✅</div>
+                    <h3>Verified Irish Businesses</h3>
+                    <p>All suppliers are verified through CRO registration checks, ensuring you only deal with legitimate Irish companies.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">🌍</div>
+                    <h3>Local & Global Reach</h3>
+                    <p>Connect with Irish SMEs locally or expand your market globally. We support EU and international trade connections.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">📊</div>
+                    <h3>Powerful Analytics</h3>
+                    <p>Real-time dashboards showing your leads, page views, inquiry trends, and competitor benchmarking tools.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">📱</div>
+                    <h3>Mobile App Ready</h3>
+                    <p>Manage your business on the go with our iOS and Android apps. Get instant notifications for new inquiries.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">🎯</div>
+                    <h3>Targeted Lead Generation</h3>
+                    <p>AI-powered matching connects you with the most relevant buyers for your products and services automatically.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">🤝</div>
+                    <h3>Dedicated Support</h3>
+                    <p>Irish-based customer success team available Mon-Fri. Phone, email, and live chat support in Irish and English.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon">💶</div>
+                    <h3>Transparent Euro Pricing</h3>
+                    <p>Clear EUR-based subscription plans. No hidden fees, no surprises. VAT receipt provided for all subscriptions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RECENT TRADE LEADS
+    ============================================ -->
+    <section class="inquiries-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div>
+                    <div class="badge">Live Opportunities</div>
+                    <h2 class="section-title">Latest Trade Leads</h2>
+                    <p class="section-subtitle">Real buying requirements from Irish and international businesses</p>
+                </div>
+                <a href="#" class="btn-secondary">View All Leads →</a>
+            </div>
+
+            <div id="inquiriesList">
+                <div class="inquiry-card fade-in">
+                    <div class="inquiry-info">
+                        <div class="inquiry-title">Looking for Bulk Supply of Organic Irish Oats - Export Order</div>
+                        <div class="inquiry-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dublin, Ireland</span>
+                            <span><i class="fas fa-industry"></i> Food & Agriculture</span>
+                            <span><i class="fas fa-clock"></i> Posted 2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="inquiry-qty">20 Tonnes</div>
+                    <button class="btn-primary" style="padding:10px 20px; font-size:13px;" onclick="showToast('Responding to this lead!', 'success')">Respond Now</button>
+                </div>
+
+                <div class="inquiry-card fade-in">
+                    <div class="inquiry-info">
+                        <div class="inquiry-title">Require Cloud IT Infrastructure Services - 2-Year Contract</div>
+                        <div class="inquiry-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Galway, Ireland</span>
+                            <span><i class="fas fa-industry"></i> Technology</span>
+                            <span><i class="fas fa-clock"></i> Posted 4 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="inquiry-qty">€150K Budget</div>
+                    <button class="btn-primary" style="padding:10px 20px; font-size:13px;" onclick="showToast('Responding to this lead!', 'success')">Respond Now</button>
+                </div>
+
+                <div class="inquiry-card fade-in">
+                    <div class="inquiry-info">
+                        <div class="inquiry-title">Urgent: Commercial Construction Contractor Needed - Cork City Centre</div>
+                        <div class="inquiry-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Cork, Ireland</span>
+                            <span><i class="fas fa-industry"></i> Construction</span>
+                            <span><i class="fas fa-clock"></i> Posted 6 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="inquiry-qty">€500K Project</div>
+                    <button class="btn-primary" style="padding:10px 20px; font-size:13px;" onclick="showToast('Responding to this lead!', 'success')">Respond Now</button>
+                </div>
+
+                <div class="inquiry-card fade-in">
+                    <div class="inquiry-info">
+                        <div class="inquiry-title">Irish Whiskey Distributor Required - European Market Expansion</div>
+                        <div class="inquiry-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Limerick, Ireland</span>
+                            <span><i class="fas fa-industry"></i> Beverages</span>
+                            <span><i class="fas fa-clock"></i> Posted 1 day ago</span>
+                        </div>
+                    </div>
+                    <div class="inquiry-qty">500 Cases/Mo</div>
+                    <button class="btn-primary" style="padding:10px 20px; font-size:13px;" onclick="showToast('Responding to this lead!', 'success')">Respond Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRICING SECTION
+    ============================================ -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div class="badge" style="background:rgba(255,255,255,0.15); color:white;">💰 Affordable Plans</div>
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Choose the plan that's right for your Irish business</p>
+            </div>
+            <div class="pricing-grid fade-in">
+
+                <div class="pricing-card">
+                    <div class="pricing-name">FREE</div>
+                    <div class="pricing-price">
+                        <span class="price-amount">€<span>0</span></span>
+                        <div class="price-period">Forever Free</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Basic Company Profile</li>
+                        <li><i class="fas fa-check"></i> 5 Product Listings</li>
+                        <li><i class="fas fa-check"></i> 10 Buyer Inquiries/mo</li>
+                        <li><i class="fas fa-check"></i> Basic Analytics</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Priority Search Ranking</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Verified Badge</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Phone Support</li>
+                    </ul>
+                    <button class="btn-secondary" onclick="openModal('register')" style="width:100%; padding:14px;">Get Started Free</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-name">SILVER</div>
+                    <div class="pricing-price">
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">99</span>
+                        <div class="price-period">per month</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Enhanced Profile</li>
+                        <li><i class="fas fa-check"></i> 50 Product Listings</li>
+                        <li><i class="fas fa-check"></i> Unlimited Inquiries</li>
+                        <li><i class="fas fa-check"></i> Contact Details Visible</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Boost</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Homepage Featured</li>
+                    </ul>
+                    <button class="btn-secondary" onclick="showToast('Redirecting to Silver plan signup!', 'success')" style="width:100%; padding:14px;">Choose Silver</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">🌟 Most Popular</div>
+                    <div class="pricing-name" style="color:var(--gray);">GOLD</div>
+                    <div class="pricing-price">
+                        <span class="price-currency" style="color:var(--primary);">€</span>
+                        <span class="price-amount" style="color:var(--primary);">249</span>
+                        <div class="price-period" style="color:var(--gray);">per month</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Premium Verified Profile</li>
+                        <li><i class="fas fa-check"></i> Unlimited Products</li>
+                        <li><i class="fas fa-check"></i> Priority Search Ranking</li>
+                        <li><i class="fas fa-check"></i> Lead Management Tools</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                        <li><i class="fas fa-check"></i> Phone & Email Support</li>
+                        <li><i class="fas fa-check"></i> Social Media Promotion</li>
+                    </ul>
+                    <button class="btn-primary" onclick="showToast('Redirecting to Gold plan signup!', 'success')" style="width:100%; padding:14px;">Choose Gold 🍀</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-name">PLATINUM</div>
+                    <div class="pricing-price">
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">499</span>
+                        <div class="price-period">per month</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Gold</li>
+                        <li><i class="fas fa-check"></i> Homepage Featured</li>
+                        <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i> Export/Import Support</li>
+                        <li><i class="fas fa-check"></i> Custom Micro-Website</li>
+                        <li><i class="fas fa-check"></i> Trade Show Access</li>
+                        <li><i class="fas fa-check"></i> WhatsApp Integration</li>
+                    </ul>
+                    <button class="btn-orange" onclick="showToast('Redirecting to Platinum plan!', 'success')" style="width:100%; padding:14px;">Choose Platinum</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS
+    ============================================ -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="header fade-in">
+                <div class="badge">💬 Success Stories</div>
+                <h2 class="section-title">What Irish Businesses Say</h2>
+                <p class="section-subtitle">Real results from real Irish businesses using IrishMart</p>
+            </div>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">IrishMart completely transformed how we find new customers. Within 3 months of joining on the Gold plan, we had secured 12 new B2B clients worth over €180,000 in contracts. The verified badge gives buyers real confidence in dealing with us.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💼</div>
+                        <div>
+                            <div class="author-name">Seamus O'Brien</div>
+                            <div class="author-company">Cork Valley Meats Ltd., Cork</div>
+                        </div>
+                        <div style="margin-left:auto;">
+                            <span class="stars" style="font-size:1.1rem;">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">As a tech startup in Galway, we needed visibility fast. IrishMart gave us that platform. The lead generation tools are excellent and the analytics help us understand which services are most in demand. Fantastic Irish platform!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💻</div>
+                        <div>
+                            <div class="author-name">Aoife Murphy</div>
+                            <div class="author-company">Galway Tech Innovations, Galway</div>
+                        </div>
+                        <div style="margin-left:auto;">
+                            <span class="stars" style="font-size:1.1rem;">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">We export Irish dairy products to 14 countries and IrishMart helped us find 6 new international distributors. The export assistance in the Platinum plan is worth every cent. Proud to use an Irish platform for our Irish business!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🧑‍🌾</div>
+                        <div>
+                            <div class="author-name">Padraig Kelly</div>
+                            <div class="author-company">Kerry Gold Dairy Co., Tralee</div>
+                        </div>
+                        <div style="margin-left:auto;">
+                            <span class="stars" style="font-size:1.1rem;">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PARTNERS SECTION
+    ============================================ -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="header">
+                <p>🤝 Trusted Partners & Supported By</p>
+            </div>
+            <div class="partners-logos fade-in">
+                <div class="partner-logo">🏦 Bank of Ireland</div>
+                <div class="partner-logo">🏦 AIB Group</div>
+                <div class="partner-logo">🇮🇪 Enterprise Ireland</div>
+                <div class="partner-logo">💼 IDA Ireland</div>
+                <div class="partner-logo">📊 Revenue Commissioners</div>
+                <div class="partner-logo">🏛️ Dublin Chamber</div>
+                <div class="partner-logo">🎓 UCD Innovation</div>
+                <div class="partner-logo">🌿 Bord Bia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         APP DOWNLOAD
+    ============================================ -->
+    <section class="app-section">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text fade-in">
+                    <div class="badge">📱 Mobile App</div>
+                    <h2>Manage Your Business Anywhere in Ireland</h2>
+                
